@@ -1,7 +1,8 @@
 using System;
 using System.Threading;
+using Computer;
 
-namespace Clock
+namespace Computer
 {
 	class Clock
 	{
@@ -24,8 +25,7 @@ namespace Clock
 			if(!halt){
 				tick=tick+.5;
 				if (!manual) {
-					//sleep(100);
-					Thread.Sleep(2);
+					//Thread.Sleep();
 				}
 				return(tick);
 			}else{

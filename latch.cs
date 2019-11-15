@@ -1,17 +1,16 @@
 using System;
-using AND;
-using NAND;
+using Logic;
 
-namespace Latch 
+namespace Latches
 {
 	class Latch
 	{
-		AND.AND a1 = new AND.AND();
-		AND.AND a2 = new AND.AND();
-		NAND.NAND n1 = new NAND.NAND();
-		NAND.NAND n2 = new NAND.NAND();
-		NAND.NAND n3 = new NAND.NAND();
-		NAND.NAND n4 = new NAND.NAND();
+		AND  a1 = new AND();
+		AND  a2 = new AND();
+		NAND n1 = new NAND();
+		NAND n2 = new NAND();
+		NAND n3 = new NAND();
+		NAND n4 = new NAND();
 
 		public Latch(){
 			Reset();

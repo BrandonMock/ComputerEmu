@@ -1,22 +1,25 @@
 using System;
-
-namespace computer
+using System.Threading;
+using Latches;
+using Computer;
+using Displays;
+namespace Computer
 {
 	class Program
 	{
 		static void Main(string[] args) {
-			Clock.Clock 	CLK = new Clock.Clock();
-			RAM.RAM	 	ram = new RAM.RAM();
-			Alu.Alu	 	alu = new Alu.Alu();
-			Register.Register DB = new Register.Register();
-			Register.Register AX = new Register.Register();
-			Register.Register BX = new Register.Register();
-			Register.Register CX = new Register.Register();
-			Register.Register DX = new Register.Register();
+			var CLK = new Clock();
+			var ram = new RAM();
+			var alu = new Alu();
+			var DB  = new Register();
+			var AX  = new Register();
+			var BX  = new Register();
+			var CX  = new Register();
+			var DX  = new Register();
 			double 	 tick=0;
-			string   databus;
-			string	 axString;
-			string	 bxString;
+			LedArray  databus;
+			LedArray  axString;
+			LedArray  bxString;
 			bool 	 subtractFlag = false;
 		
 			DB.reset();
@@ -25,9 +28,6 @@ namespace computer
 		
 			BX.setValue("00000001");
 			
-			bxString = BX.getByte();
-			Console.WriteLine("BX:{0}  \n",bxString );
-		
 			AX.setOutput();
 			BX.setInput();
 			AX.setEnable(true);
@@ -37,16 +37,24 @@ namespace computer
 			while (tick<=Math.Pow(2,8)-1){
 				tick = CLK.getNextClock();
 				if(CLK.getSignal()){
-					DB = (Register.Register)AX.outputData(DB, CLK.getSignal());
-					DB = (Register.Register)BX.outputData(DB, CLK.getSignal());
+					DB = (Register)AX.outputData(DB, CLK.getSignal());
+					DB = (Register)BX.outputData(DB, CLK.getSignal());
 					AX.inputData(DB, CLK.getSignal());
 					BX.inputData(DB, CLK.getSignal());
 					alu.Calculate(AX,BX,subtractFlag, CLK.getSignal());
-					
-					databus = DB.getByte();
-					axString = AX.getByte();
-					bxString = BX.getByte();
-					Console.WriteLine("clock:{0}  |  clksignal:{1}  |  bus:{2}  |  AX:{3}  |  BX:{4}  | ",tick,CLK.getSignal(), databus, axString, bxString );
+					Console.Clear();			
+					databus =  new LedArray(DB.getByte(), ConsoleColor.Green, ConsoleColor.Black);
+					axString = new LedArray(AX.getByte(), ConsoleColor.Green, ConsoleColor.Black);
+					bxString = new LedArray(BX.getByte(), ConsoleColor.Green, ConsoleColor.Black);
+					Console.Write("clock:{0}  |  clksignal:{1}  ",tick.ToString("00000000"),CLK.getSignal());
+					Console.Write("\n BUS: ");
+					databus.display();
+					Console.Write("\n  AX: ");
+					axString.display();
+					Console.Write("\n  BX: ");
+					bxString.display();
+					Console.Write("\n");
+					Thread.Sleep(200);
 				}else{
 					DB.reset();
 				}

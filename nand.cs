@@ -1,6 +1,6 @@
 using System;
 
-namespace NAND
+namespace Logic
 {
 	class NAND{
 		bool[] I = new bool[5];

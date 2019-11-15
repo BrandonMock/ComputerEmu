@@ -1,22 +1,22 @@
 using System;
-using Latch;
+using Latches;
 using System.Collections.Generic;
 
-namespace LatchArray
+namespace Latches
 {
 
 	class LatchArray
 	{
 		bool enable;
 		bool IO;
-		List<Latch.Latch> data = new List<Latch.Latch>();
+		List<Latch> data = new List<Latch>();
 	
 		public LatchArray(){
 			Initialize(8);
 			reset();
 		}
 
-		public List<Latch.Latch> GetList(){
+		public List<Latch> GetList(){
 			return data;
 		}
 
@@ -28,7 +28,7 @@ namespace LatchArray
 		public void Initialize(int bits){
 			this.resize(bits);
 			for(int i=0; i<bits; ++i){
-				var a = new Latch.Latch();
+				var a = new Latch();
 				data[i]=a;
 			}
 		}
@@ -36,7 +36,7 @@ namespace LatchArray
 		public void resize(int bits){
 			data.Clear();
 			for (int i = 0; i<bits; ++i){
-				var temp = new Latch.Latch();
+				var temp = new Latch();
 				data.Add(temp);
 			}
 		}

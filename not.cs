@@ -1,7 +1,7 @@
 using System;
-using NAND;
+using Logic;
 
-namespace NOT
+namespace Logic
 {
 	class NOT
 	{
@@ -10,7 +10,7 @@ namespace NOT
 
 		public void setI(bool val){
 			I = val;
-			NAND.NAND n1 = new NAND.NAND();
+			var n1 = new NAND();
 			n1.setI(1,I);
 			n1.setI(2,I);
 			O = n1.getO();

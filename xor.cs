@@ -1,7 +1,7 @@
 using System;
-using NAND;
+using Logic;
 
-namespace XOR
+namespace Logic 
 {
 	class XOR
 	{
@@ -11,10 +11,10 @@ namespace XOR
 		public void setI(int index, bool val){
 			I[index] = val;
 		
-			NAND.NAND n1 = new NAND.NAND();
-			NAND.NAND n2 = new NAND.NAND();
-			NAND.NAND n3 = new NAND.NAND();
-			NAND.NAND n4 = new NAND.NAND();
+			var n1 = new NAND();
+			var n2 = new NAND();
+			var n3 = new NAND();
+			var n4 = new NAND();
 
 			n1.setI(1,I[1]);
 			n1.setI(2,I[2]);

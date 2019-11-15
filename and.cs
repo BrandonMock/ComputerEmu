@@ -1,7 +1,7 @@
 using System;
-using NAND;
+using Logic; 
 
-namespace AND
+namespace Logic
 {
 	class AND{
 		bool[] I = new bool[8];
@@ -9,8 +9,8 @@ namespace AND
 	
 		public void setI(int index, bool val){
 			I[index] = val;
-			NAND.NAND n1 = new NAND.NAND();
-			NAND.NAND n2 = new NAND.NAND();
+			var n1 = new NAND();
+			var n2 = new NAND();
 		
 			n1.setI(1,I[1]);
 			n1.setI(2,I[2]);

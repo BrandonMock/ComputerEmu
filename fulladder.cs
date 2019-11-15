@@ -1,9 +1,8 @@
 using System;
-using AND;
-using XOR;
-using OR;
+using Logic; 
+using Computer;
 
-namespace fullAdder
+namespace Computer 
 {
 	class fullAdder
 	{
@@ -38,11 +37,11 @@ namespace fullAdder
 		}
 
 		public void Calculate(){
-			AND.AND a1 = new AND.AND();
-			AND.AND a2 = new AND.AND();
-			XOR.XOR x1 = new XOR.XOR();
-			XOR.XOR x2 = new XOR.XOR();
-			OR.OR  o1 = new OR.OR();
+			var a1 = new AND();
+			var a2 = new AND();
+			var x1 = new XOR();
+			var x2 = new XOR();
+			var o1 = new OR();
 			
 			a1.setI(1,getI(1));
 			a1.setI(2,getI(2));

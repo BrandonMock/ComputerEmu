@@ -1,17 +1,17 @@
 using System;
-using fullAdder;
-using XOR;
-using Register;
+using Logic; 
+using Latches;
+using Computer;
 
-namespace Alu
+namespace Computer
 {
 	class Alu
 	{
-		public void Calculate(Register.Register AX, Register.Register BX,bool SubtractFlag, bool clock){
-			fullAdder.fullAdder FA = new fullAdder.fullAdder();
+		public void Calculate(Register AX, Register BX,bool SubtractFlag, bool clock){
+			var FA = new fullAdder();
 			FA.setCarryIn(SubtractFlag);
 			for(int i=0; i<8; i++){
-				XOR.XOR x1 = new XOR.XOR();
+				var x1 = new XOR();
 				x1.setI(1,SubtractFlag);
 				x1.setI(2,BX.getBit(i));
 				FA.setI(1,AX.getBit(i));

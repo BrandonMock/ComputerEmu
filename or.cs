@@ -1,7 +1,7 @@
 using System;
-using NAND;
+using Logic;
 
-namespace OR
+namespace Logic
 {
 	class OR
 	{
@@ -10,9 +10,9 @@ namespace OR
 
 		public void setI(int index, bool val){
 			I[index] = val;
-			var n1 = new NAND.NAND();
-			var n2 = new NAND.NAND();
-			var n3 = new NAND.NAND();
+			var n1 = new NAND();
+			var n2 = new NAND();
+			var n3 = new NAND();
 			
 			n1.setI(1,I[1]);
 			n1.setI(2,I[1]);

@@ -1,9 +1,9 @@
 using System;
-using LatchArray;
+using Latches;
 
-namespace Register
+namespace Latches 
 {
-	class Register: LatchArray.LatchArray {	
+	class Register: LatchArray {	
 		public Register(){
 			Initialize(8);
 		}	

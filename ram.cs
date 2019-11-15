@@ -1,9 +1,9 @@
 using System;
-using LatchArray;
+using Latches;
 
-namespace RAM
+namespace Latches
 {
-	class RAM: LatchArray.LatchArray
+	class RAM: LatchArray
 	{
 		public RAM(){
 			Initialize(8);
