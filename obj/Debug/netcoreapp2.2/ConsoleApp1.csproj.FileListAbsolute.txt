@@ -1,0 +1,11 @@
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ConsoleApp1.csprojAssemblyReference.cache
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ConsoleApp1.csproj.CoreCompileInputs.cache
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ConsoleApp1.AssemblyInfoInputs.cache
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ConsoleApp1.AssemblyInfo.cs
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ConsoleApp1.deps.json
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ConsoleApp1.runtimeconfig.json
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ConsoleApp1.runtimeconfig.dev.json
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ConsoleApp1.dll
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ConsoleApp1.pdb
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ConsoleApp1.dll
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ConsoleApp1.pdb

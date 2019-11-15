@@ -1,0 +1,11 @@
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ComputerEmu.deps.json
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ComputerEmu.runtimeconfig.json
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ComputerEmu.runtimeconfig.dev.json
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ComputerEmu.dll
+/ComputerEmulator/bin/Debug/netcoreapp2.2/ComputerEmu.pdb
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ComputerEmu.csprojAssemblyReference.cache
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ComputerEmu.csproj.CoreCompileInputs.cache
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ComputerEmu.AssemblyInfoInputs.cache
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ComputerEmu.AssemblyInfo.cs
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ComputerEmu.dll
+/ComputerEmulator/obj/Debug/netcoreapp2.2/ComputerEmu.pdb

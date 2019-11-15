@@ -1,0 +1,2 @@
+dotnet build > error.txt
+vi error.txt
