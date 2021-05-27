@@ -40,7 +40,7 @@ namespace Displays
 			} else {
 				Console.ForegroundColor = offColor;
 			}
-			Console.Write("\u25cf");
+			Console.Write(" \u25cf ");
 			Console.ForegroundColor = backupFG;
 			Console.BackgroundColor = backupBG;
 		}

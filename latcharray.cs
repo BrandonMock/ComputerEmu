@@ -1,4 +1,5 @@
 using System;
+using Computer;
 using Latches;
 using System.Collections.Generic;
 
@@ -7,12 +8,13 @@ namespace Latches
 
 	class LatchArray
 	{
+		ComputerSystem CS = new ComputerSystem();
 		bool enable;
 		bool IO;
 		List<Latch> data = new List<Latch>();
 	
 		public LatchArray(){
-			Initialize(8);
+			Initialize((int)CS.wordsize);
 			reset();
 		}
 
@@ -27,13 +29,10 @@ namespace Latches
 		
 		public void Initialize(int bits){
 			this.resize(bits);
-			for(int i=0; i<bits; ++i){
-				var a = new Latch();
-				data[i]=a;
-			}
 		}
 	
 		public void resize(int bits){
+			Console.WriteLine(bits);
 			data.Clear();
 			for (int i = 0; i<bits; ++i){
 				var temp = new Latch();
@@ -57,9 +56,9 @@ namespace Latches
 		}
 	
 		public string getByte(){
-			string temp = "00000000";
+			string temp = new string('0',(int)CS.wordsize);
 			string output = "";
-			int i=8;
+			int i=(int)CS.wordsize;
 			var charArray = temp.ToCharArray();
 			foreach(var a in charArray){
 				--i;
@@ -92,9 +91,16 @@ namespace Latches
 		}
 
 		public void setValue(string value){
+			Console.WriteLine(value);
 			var charArray = value.ToCharArray();
-			int i =0;
+			int i=0;			
 			foreach (char a in charArray){
+				Console.Write(i);
+				Console.Write(" - ");
+				Console.Write(data.Count-1);
+				Console.Write(" - ");
+				Console.Write((data.Count-1)-i);
+				Console.Write("\n");
 				if(a==48){
 					data[(data.Count-1)-i].Set(false,true,true);
 				}else{

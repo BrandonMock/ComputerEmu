@@ -1,11 +1,13 @@
 using System;
+using Computer;
 using Latches;
 
 namespace Latches 
 {
 	class Register: LatchArray {	
 		public Register(){
-			Initialize(8);
+			ComputerSystem CS = new ComputerSystem();
+			Initialize((int)CS.wordsize);
 		}	
 	}
 }

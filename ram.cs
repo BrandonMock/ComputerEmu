@@ -6,7 +6,7 @@ namespace Latches
 	class RAM: LatchArray
 	{
 		public RAM(){
-			Initialize(8);
+			//Initialize();
 		}	
 	}
 }
