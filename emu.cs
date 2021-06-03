@@ -33,7 +33,11 @@ namespace Computer
 			LedArray  cxString;
 			LedArray  dxString;
 			bool 	  subtractFlag = false;
-	
+
+			Console.CursorVisible = false;
+			Console.Clear();
+			Console.SetCursorPosition(0,0);
+
 			DB.reset();
 			AX.reset();
 			BX.reset();
@@ -69,7 +73,7 @@ namespace Computer
 					alu.Calculate(AX,BX,subtractFlag, CLK.getSignal());
 					alu.shiftData(AX, CLK.getSignal());
 					
-					Console.Clear();			
+					Console.SetCursorPosition(0,0);			
 					databus  = new LedArray(DB.getByte(), ConsoleColor.Yellow, ConsoleColor.Black);
 					alubus   = new LedArray(alu.getByte(),ConsoleColor.Red, ConsoleColor.Black);
 					axString = new LedArray(AX.getByte(), ConsoleColor.Green, ConsoleColor.Black);
@@ -97,6 +101,8 @@ namespace Computer
 					DB.reset();
 				}
 			}
+		        Console.Clear();
+			Console.CursorVisible = true;
 		}
 	}
 }

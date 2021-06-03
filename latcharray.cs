@@ -95,12 +95,12 @@ namespace Latches
 			var charArray = value.ToCharArray();
 			int i=0;			
 			foreach (char a in charArray){
-				Console.Write(i);
-				Console.Write(" - ");
-				Console.Write(data.Count-1);
-				Console.Write(" - ");
-				Console.Write((data.Count-1)-i);
-				Console.Write("\n");
+				//Console.Write(i);
+				//Console.Write(" - ");
+				//Console.Write(data.Count-1);
+				//Console.Write(" - ");
+				//Console.Write((data.Count-1)-i);
+				//Console.Write("\n");
 				if(a==48){
 					data[(data.Count-1)-i].Set(false,true,true);
 				}else{
